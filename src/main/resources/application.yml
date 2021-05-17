@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    hibernate.ddl-auto: update
+    show-sql: true
+  datasource:
+    platform: postgres
+    driverClassName: org.postgresql.Driver
+    url: ${POSTGRES_URL:}
+    username: wikijs
+    password: ${POSTGRES_PASSWORD}
+
+yahoo-finance:
+  api-key: ${API_KEY_RAPIDAPI:}
+  base-url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com"
