@@ -1,15 +1,16 @@
 spring:
   jpa:
-    database: POSTGRESQL
-    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
+    hibernate:
+      ddl-auto: create
   datasource:
-    platform: postgres
-    driverClassName: org.postgresql.Driver
-    url: ${POSTGRES_URL:}
-    username: wikijs
-    password: ${POSTGRES_PASSWORD}
+    platform: h2
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:file:./data/demo
+    username: sa
+    password: password
 
 yahoo-finance:
-  api-key: ${API_KEY_RAPIDAPI:}
+  api-key: ${API_KEY_RAPIDAPI:be9bb95c27msh8cbcd68c9c1413bp1624b4jsn8669abbd02b3}
   base-url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com"
